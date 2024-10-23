@@ -15,7 +15,7 @@
       in
       {
         packages.default = pkgs.writeShellScriptBin "hello" ''
-          echo "Hello World"
+          echo "Hello World!!"
         '';
       }
     );
