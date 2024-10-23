@@ -4,14 +4,12 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    get-flake.url = "github:ursi/get-flake";
+    flake-b.url = "path:../b";
   };
 
-  outputs = { self, nixpkgs, flake-utils, get-flake }:
+  outputs = { self, nixpkgs, flake-utils, flake-b }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        flake-b = get-flake ../b;
-
         pkgs = import nixpkgs {
           inherit system;
         };
